@@ -19,12 +19,46 @@ DATA = {
     # можете добавить свои рецепты ;)
 }
 
-# Напишите ваш обработчик. Используйте DATA как источник данных
-# Результат - render(request, 'calculator/index.html', context)
-# В качестве контекста должен быть передан словарь с рецептом:
-# context = {
-#   'recipe': {
-#     'ингредиент1': количество1,
-#     'ингредиент2': количество2,
-#   }
-# }
+
+def omlet_view(request):
+    omlet = DATA["omlet"]
+    servings = int(request.GET.get("servings", 1))
+    new_omlet = {}
+    for key, val in omlet.items():
+        new_omlet.setdefault(key, val * servings)
+    context = {
+        'recipe': new_omlet
+    }
+    return render(request, 'calculator/index.html', context=context)
+
+
+def pasta_view(request):
+    pasta = DATA["pasta"]
+    servings = int(request.GET.get("servings", 1))
+    new_pasta = {}
+    for key, val in pasta.items():
+        new_pasta.setdefault(key,val*servings)
+    context = {
+        'recipe': new_pasta
+    }
+    return render(request, 'calculator/index.html', context=context)
+
+
+def buter_view(request):
+    buter = DATA["buter"]
+    servings = int(request.GET.get("servings", 1))
+    new_buter = {}
+    for key, val in buter.items():
+        new_buter.setdefault(key, val * servings)
+    context = {
+        'recipe': new_buter
+    }
+    return render(request, 'calculator/index.html', context=context)
+
+
+def menu_view(request):
+    menu = DATA
+    context = {
+        'recipe': menu
+    }
+    return render(request, 'calculator/index.html', context=context)
