@@ -18,4 +18,9 @@
             </div>
         </div>
     </div>
+<p align="center">
+   <a href = '{% url 'books' %}{{ books_previous }}'> <buttom> {{ books_previous }} </buttom></a>
+    <a href = '{% url 'books' %}{{ books_next }}'> <buttom> {{ books_next }} </buttom></a>
+</p>
+
 {% endblock %}
