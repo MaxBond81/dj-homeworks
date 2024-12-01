@@ -53,7 +53,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'demoorm',
         'USER': 'postgres',
-        'PASSWORD': '',
+        'PASSWORD': '123',
     }
 }
 

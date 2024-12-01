@@ -62,3 +62,15 @@ def menu_view(request):
         'recipe': menu
     }
     return render(request, 'calculator/index.html', context=context)
+
+
+def dish_view(request, dish):
+    dish = DATA[dish]
+    servings = int(request.GET.get("servings", 1))
+    new_dish = {}
+    for key, val in dish.items():
+        new_dish.setdefault(key, val * servings)
+    context = {
+        'recipe': new_dish
+    }
+    return render(request, 'calculator/index.html', context=context)
