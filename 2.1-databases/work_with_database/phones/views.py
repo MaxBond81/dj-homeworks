@@ -16,7 +16,7 @@ def show_catalog(request):
     elif sort == 'min_price':
         result = phone_objects.order_by('price')
     elif sort == 'max_price':
-        result = phone_objects.order_by('price').reverse()
+        result = phone_objects.order_by('-price')
     else:
         result = phone_objects
     context = {"phones": result}
