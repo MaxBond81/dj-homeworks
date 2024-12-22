@@ -88,9 +88,9 @@ WSGI_APPLICATION = 'api_with_restrictions.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'netology_classified_ads',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': 'orm_2',
+        'USER': 'postgres',
+        'PASSWORD': '123',
     }
 }
 
