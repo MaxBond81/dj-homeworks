@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'django_testing.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'orm_2',
+        'NAME': '',
         'USER': 'postgres',
-        'PASSWORD': '123',
+        'PASSWORD': '',
     }
 }
 
@@ -124,3 +124,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+
+}
+
+MAX_STUDENTS_PER_COURSE = 20
